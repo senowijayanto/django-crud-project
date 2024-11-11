@@ -1,3 +1,38 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django-specific files and folders
+db.sqlite3
+*.sqlite3
+/media/
+*.log
+
+# Node.js dependencies
 node_modules/
-package-lock.json
-.idea
+
+# Tailwind CSS generated files (if any)
+*.css.map
+
+# Environment variables
+.env
+
+# PyCharm project files
+.idea/
+
+# Virtual environments
+venv/
+env/
+
+# Static and media files generated at runtime
+/staticfiles/
+media/
+
+# Ignore compiled files and cache
+*.pyc
+__pycache__/
+
+# Other common files to exclude
+.DS_Store
+Thumbs.db
