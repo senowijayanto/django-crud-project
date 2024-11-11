@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">{{ task.title|default:"Create Task" }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title" class="block text-gray-700">Title:</label>
+        <input type="text" id="title" name="title" value="{{ task.title|default:"" }}" class="w-full p-2 border rounded mb-4">
+
+        <label for="description" class="block text-gray-700">Description:</label>
+        <textarea id="description" name="description" class="w-full p-2 border rounded mb-4">{{ task.description|default:'' }}</textarea>
+
+        <label for="completed" class="block text-gray-700">Completed:</label>
+        <input type="checkbox" id="completed" name="completed" {% if task.completed %}checked{% endif %} class="mb-4">
+
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Save</button>
+    </form>
+{% endblock %}
